@@ -13,9 +13,11 @@ import java.util.Date;
 public class SessionInfoAPIController {
     @GetMapping("/session-info")
     public String sessionInfo(HttpServletRequest request){
+        log.info("[SessionInfoAPIController] sessionInfo : session test");
         HttpSession session=request.getSession(false);
         if(session==null){
-            return "세션이 없습니다. 로그인을 시도하시오. jenkins-test23신동훈";
+            log.info("[SessionInfoAPIController] sessionInfo : session null");
+            return "세션이 없습니다. 로그인을 시도하시오.";
         }
         System.out.println(session.getAttributeNames());//HttpSession 객체에서 현재 세션에 저장된 모든 속성의 이름(키)을 가져오는데 사용되는 메서드
         session.getAttributeNames().asIterator().forEachRemaining(name->log.info("session name={},value={}",name,session.getAttribute(name)));
