@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class LoginAPIController {
     private final LoginService loginService;
 
-    @CrossOrigin(origins = "<http://localhost:3000>")
+    @CrossOrigin(origins = "<http://116.121.184.161/:3000>")
     @PostMapping("/login_try")
     public String loginBySession(@RequestBody MemberLoginDto memberSignInDto, HttpServletRequest request){
 
