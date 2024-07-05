@@ -11,13 +11,14 @@ public class WebConfig implements WebMvcConfigurer {
 
     private static final String CORS_URL_PATTERN = "/**";
     private static final String CORS_URL = "http://116.121.184.161:3000";
-    private static final String CORS_METHOD = "*";
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping(CORS_URL_PATTERN)
                 .allowedHeaders("*")
                 .allowedOrigins(CORS_URL)
-                .allowedMethods(CORS_METHOD);
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowCredentials(true);
+
     }
 }
