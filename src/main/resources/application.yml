@@ -20,6 +20,8 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+#    cors:
+#      allowed-origins: "*"
 
 server:
   port: 9000
