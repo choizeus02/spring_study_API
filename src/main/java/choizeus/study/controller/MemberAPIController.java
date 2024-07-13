@@ -35,7 +35,7 @@ public class MemberAPIController {
         if(loginMember==null){
             return "기본 홈 화면";
         }
-        log.info("[MemberAPIController] homeLoginBySession : session test");
+        log.info("[MemberAPIController] homeLoginBySession : session test123");
         return loginMember.getName()+"을 위한 기본 홈 화면";
     }
 
